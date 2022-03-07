@@ -15,11 +15,11 @@ Python with Turtle lets you make graphics easily in Python.
 
 Check out the official docs here: https://docs.python.org/3/library/turtle.html
 """
-import sys
-import math 
-import turtle
+import sys 
+import math
+import turtle 
 t = turtle.Turtle()
-t.speed(100)
+t.speed(1000)
 t.getscreen().bgcolor('#C1FDD1')
 want = input("What geometric shape do you want:")
 
