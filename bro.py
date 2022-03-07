@@ -18,6 +18,7 @@ Check out the official docs here: https://docs.python.org/3/library/turtle.html
 import sys 
 import math
 import turtle 
+import colorama
 t = turtle.Turtle()
 t.speed(1000)
 t.getscreen().bgcolor('#C1FDD1')
@@ -138,7 +139,7 @@ else:
        t.forward(cc*10)
        t.end_fill()
      print("\nShape related data are:")
-     print("\n------right triangle-------")
+     print("\t               ------right triangle-------")
      print("""                                                          
                                                                     . *| 
                                                             c   . *    |                                                              
@@ -293,7 +294,7 @@ else:
      
      
      from tabulate import tabulate
-     data = [["circumference", sum1], 
+     data = [[ "circumference", sum1], 
             ["triangle area", sum2],
             ["The hypotenuse 'c'",cc],
             ["third degree angle", gg],
@@ -315,8 +316,7 @@ else:
   
      #display table
      print(tabulate(data, headers=col_names, tablefmt="fancy_grid"))
-     print(bb)
-     print(ccc)
+#wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
    else:
     if b == ccc and d != c and c < 90  :
      for n in [1] :
@@ -470,6 +470,26 @@ else:
          t.fd(r4)
          t.pendown()
          t.fd(r4)
+         from tabulate import tabulate
+      data = [[ "circumference", sum1], 
+            ["triangle area", sum2],
+            ["The hypotenuse 'c'",cc],
+            ["third degree angle", gg],
+            ["rectangle or square circumference", sum3],
+            ["rectangle or square area ", sum4],
+            ["diagonal d", cc],
+            ["length height 'h'", h], 
+            ["length q", q], 
+            ["length p", p],
+            ["circumference of a circle", cicr], 
+            ["area of a circle", arci], 
+            ["r", r], 
+            ["third degree angle", ac]]
+  v      col_names = ["data", "xx"]
+  
+     #display table
+     print(tabulate(data, headers=col_names, tablefmt="fancy_grid"))
+#wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
     else:
      if b == ccc and b == a :
        for n in [1] :
@@ -641,8 +661,25 @@ else:
        for n in range(1):
          t.left(90)
 
-         print("""| circumference of a circle : {0} || area of a circle :{1} | | r : {2} |""".format(cicr,arci,r3))
-         #c degree angles:{3}°".format(sum1,sum2,ac,gg))
+       print("""| circumference of a circle : {0} || area of a circle :{1} | | r : {2} |""".format(cicr,arci,r3))
+       from tabulate import tabulate
+       data = [["circumference", sum1], 
+            ["triangle area", sum2],
+            ["degree angle", gg],
+            ["Height", ac],
+            ["circumference of a circle", cicr], 
+            ["area of a circle", arci], 
+            ["r", r3]]
+  
+            #define header names
+           #col_names = ["Shape related data are:"]
+           #col_names = ["right triangle"]
+       col_names = ["data", "xx"]
+  
+            #display table 
+       print(tabulate(data, headers=col_names, tablefmt="fancy_grid"))
+         
+          #c degree angles:{3}°".format(sum1,sum2,ac,gg))
      else:  
        if c >90 and d != gg :
          for n in range(1):
