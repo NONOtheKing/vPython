@@ -111,7 +111,7 @@ else:
    ac = float(math.sqrt(aa))
    bb = float((ac**2)+((a/2)**2))
    ccc = float(math.sqrt(bb))
-   C = float(180 - (c + d))
+   #C = float(180 - (c + d))
    gg = (180-(c+d))
    R = (d * math.pi) / 180
    h = (math.sin(R))*(b) 
@@ -137,7 +137,8 @@ else:
      for n in [1]:
        t.forward(cc*10)
        t.end_fill()
-     print("\nShape related data are:") 
+     print("\nShape related data are:")
+     print("\n------right triangle-------")
      print("""                                                          
                                                                     . *| 
                                                             c   . *    |                                                              
@@ -148,7 +149,7 @@ else:
      """)
      sum1 = float(a + b + cc)
      sum2 = float((a*b)/2)
-     print("             ------right triangle-------\n| circumference : {0} | | triangle area : {1} | | The hypotenuse 'c' : {2}   ".format(sum1,sum2,cc))
+     ##print("             ------right triangle-------\n| circumference : {0} | | triangle area : {1} | | The hypotenuse 'c' : {2}   ".format(sum1,sum2,cc))
      for n in ['red']:
       t.left(((c+d) - 180)-180)
       t.penup()
@@ -166,7 +167,7 @@ else:
       t.fd(b*10)
       t.left(90)
       t.pendown()
-     print("| third degree angle: {0} | ".format(gg))
+     ##print("| third degree angle: {0} | ".format(gg))
      for n in range(5):
       t.color("blue")
       t.fd(a)
@@ -181,7 +182,7 @@ else:
       t.penup()
       t.fd(b)
       t.pendown()
-     print("| rectangle circumference : {0} | rectangle area : {1} | |diagonal d = {2} |".format(sum3,sum4,cc))
+     ##print("| rectangle or square circumference : {0} | rectangle or square area : {1} | |diagonal d = {2} |".format(sum3,sum4,cc))
      for n in range (1):
       t.left(90+gg)
       t.fd(p*10)
@@ -218,7 +219,7 @@ else:
        t.right(90)
        t.fd((h-h/1.2)*10)
        t.pendown()
-     print("| length height 'h': {0} |".format(h))
+     ##print("| length height 'h': {0} |".format(h))
      for n in range(1):
         t.penup()
         t.left(90)
@@ -247,7 +248,7 @@ else:
         t.left(90)
         t.fd((q/2)*10)
         t.pendown()
-     print("| p : {0} | q : {1} | ".format(p,q))
+     ##print("| p : {0} | q : {1} | ".format(p,q))
      for n in range(1):
        t.color('orange')
        t.right(180 - d)
@@ -282,17 +283,22 @@ else:
       t.fd(r*10)
       t.right(90)
       t.fd(r*10)
-     print("""| circumference of a circle : {0} |
-     | area of a circle : {1} | | r : {2} |""".format(cicr,arci,r))
+     ##print("""| circumference of a circle : {0} |
+     ##| area of a circle : {1} | | r : {2} |""".format(cicr,arci,r))
        #t.fd(b*10)
        #t.right(180-(180-(gg+90)))
        #t.fd(h*10)
      for n in range(1):
         t.left(90)
-     print("| third degree angle: {0} |  | triangle heig: {1} |".format(ac,C))
+     
+     
      from tabulate import tabulate
-     data = [["circumference", sum3], 
-            ["triangle area", sum4], 
+     data = [["circumference", sum1], 
+            ["triangle area", sum2],
+            ["The hypotenuse 'c'",cc],
+            ["third degree angle", gg],
+            ["rectangle or square circumference", sum3],
+            ["rectangle or square area ", sum4],
             ["diagonal d", cc],
             ["length height 'h'", h], 
             ["length q", q], 
@@ -300,16 +306,17 @@ else:
             ["circumference of a circle", cicr], 
             ["area of a circle", arci], 
             ["r", r], 
-            ["third degree angle", ac],
-            [" triangle heig", C]]
+            ["third degree angle", ac]]
   
        #define header names
-     col_names = ["Shape related data are:"]
-     col_names = ["right triangle"]
-     col_names = ["data"]
+     #col_names = ["Shape related data are:"]
+     #col_names = ["right triangle"]
+     col_names = ["data", "xx"]
   
      #display table
      print(tabulate(data, headers=col_names, tablefmt="fancy_grid"))
+     print(bb)
+     print(ccc)
    else:
     if b == ccc and d != c and c < 90  :
      for n in [1] :
@@ -566,7 +573,7 @@ else:
          t.penup()
          t.fd(ac/2)
          t.pendown() 
-       print("| triangle heig: {0} |".format(ac)) 
+       print("| triangle height: {0} |".format(ac)) 
        for n in range(1):
          t.penup()
          t.color("#430606")
