@@ -17,6 +17,9 @@ Check out the official docs here: https://docs.python.org/3/library/turtle.html
 """
 import sys 
 import math
+from tkinter import font
+from tkinter.font import ITALIC
+from tkinter.ttk import Style
 import turtle 
 import colorama
 t = turtle.Turtle()
@@ -138,8 +141,10 @@ else:
      for n in [1]:
        t.forward(cc*10)
        t.end_fill()
-     print("\nShape related data are:")
-     print("\t               ------right triangle-------")
+       t.color('green')
+       print("\nShape related data are:")
+       style = ('Courier',10,'italic')
+       t.write(""" ------right triangle-------   """,font=style,align='right' )
      print("""                                                          
                                                                     . *| 
                                                             c   . *    |                                                              
@@ -360,7 +365,7 @@ else:
       t.left(180)
       t.fd(3)
       t.left(180-30)
-     print("          ------isosceles triangle-------\n|circumference : {0} |  triangle area : {1} |".format(sum1,sum2))
+     #print("          ------isosceles triangle-------\n|circumference : {0} |  triangle area : {1} |".format(sum1,sum2))
      for n in ['green']:
       t.penup()
       t.left(180)
@@ -470,22 +475,10 @@ else:
          t.fd(r4)
          t.pendown()
          t.fd(r4)
-         from tabulate import tabulate
-      data = [[ "circumference", sum1], 
-            ["triangle area", sum2],
-            ["The hypotenuse 'c'",cc],
-            ["third degree angle", gg],
-            ["rectangle or square circumference", sum3],
-            ["rectangle or square area ", sum4],
-            ["diagonal d", cc],
-            ["length height 'h'", h], 
-            ["length q", q], 
-            ["length p", p],
-            ["circumference of a circle", cicr], 
-            ["area of a circle", arci], 
-            ["r", r], 
-            ["third degree angle", ac]]
-  v      col_names = ["data", "xx"]
+     from tabulate import tabulate
+     data = [[ "circumference", sum1], 
+            ["triangle area", sum2]]
+     col_names = ["data", "xx"]
   
      #display table
      print(tabulate(data, headers=col_names, tablefmt="fancy_grid"))
@@ -495,6 +488,9 @@ else:
        for n in [1] :
         t.forward(b*10)
         t.end_fill()
+        t.color('green')
+       style = ('Courier',10,'italic')
+       t.write(""" equilateral triangle""",font=style,align='right' )
        print("Shape related data are:")
        print("""                                                          
                                                                     . *| 

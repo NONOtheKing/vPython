@@ -1,12 +1,12 @@
-from tabulate import tabulate
-#create data
+from cgi import print_arguments
 
-#create data
-data = [["Mavs", 99], ["Suns", 91], 
-        ["Spurs", 94], ["Nets", 88]]
-  
-#define header names
-col_names = ["Team", "Points"]
-  
-#display table
-print(tabulate(data, headers=col_names, tablefmt="fancy_grid"))
+
+try:
+ num1 = 10
+ num2 = 0
+ print(num1/num2)
+except ZeroDivisionError:
+        print("bro")
+finally:
+        print_arguments
+        "dlmln,vwdscv,ldsm"
