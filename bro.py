@@ -15,6 +15,8 @@ Python with Turtle lets you make graphics easily in Python.
 
 Check out the official docs here: https://docs.python.org/3/library/turtle.html
 """
+from cmath import cos
+import math
 import sys 
 import math
 from tkinter import font
@@ -99,13 +101,22 @@ else:
    b = float(input("The length of the side is adjacent to the base:")) 
    for n in [1]:
      t.forward(b*10)
-   d = float(input("second degree angle:"))
+#d = float(input("second degree angle:"))
+################################################################
+   k =  math.cos(180-c) / (math.pi * 180) * b 
+   Hp = math.sqrt((b**2) - (k**2))
+   ka =  k + a
+   Cc =  math.sqrt(ka**2 +Hp**2)
+   cosgg = ka / Cc
+   d =  math.acos(cosgg) / math.pi * 180  
+###################################################################
+   d1 = (180 - c) / 2
    if d + c >= 180 :
      print(" \nenter some valid shit _bitch")
      raise SystemExit
    else:
      for n in [1]:
-      t.left(180-d)  
+      t.left(180-d)                                                                  
    print("_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_")
      #again = str(input("Do you want to try it again: ")).lower()
      #if again in pp :
@@ -148,10 +159,10 @@ else:
        style = ('Courier',10,'italic')
        t.write(""" ------right triangle-------   """,font=style,align='right')
      print("""                                                          
-                                                                    . *| 
-                                                            c   . *    |                                                                    
-                                                            . *        | b
-                                                          *____________|
+                                                                  . *| 
+                                                           c  . *    |                                                                    
+                                                          . *        | b
+                                                        *____________|
                                                                 a
                                                                   
      """)
@@ -274,7 +285,7 @@ else:
        t.left(180)
        t.left(-gg/2)
        t.pendown()
-     for n in range(15): 
+     for n in range(15):
        t.fd(cc/3) 
        t.penup()
        t.fd(cc/3)
@@ -298,8 +309,6 @@ else:
        #t.fd(h*10)
      for n in range(1):
         t.left(90)
-     
-     
      from tabulate import tabulate
      data = [[ "circumference", sum1], 
             ["triangle area", sum2],
@@ -325,7 +334,7 @@ else:
      print(tabulate(data, headers=col_names, tablefmt="fancy_grid"))
 #wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
    else:
-    if b == ccc and d != c and c < 90 :
+    if b == ccc and d1 != c and c < 90 :
      style = ('Courie   r',10,'italic')
      for n in [1] :
       t.forward(b*10)
@@ -340,6 +349,7 @@ else:
                                                                 (a) = b
      
      """)
+     print(d)
      sum1 = float(a + b + b) 
      sum2 = float((a/2)*b)
      for n in range(1):
@@ -481,7 +491,19 @@ else:
          t.fd(r4)
      from tabulate import tabulate
      data = [[ "circumference", sum1], 
-            ["triangle area", sum2]]
+            ["triangle area", sum2]
+             ["The hypotenuse 'c'",b],
+            ["third degree angle", gg],
+            ["rectangle or square circumference", sum3],
+            ["rectangle or square area ", sum4],
+            ["diagonal d", cc],
+            ["length height 'h'", h], 
+            ["length q", q], 
+            ["length p", p],
+            ["circumference of a circle", cicr], 
+            ["area of a circle", arci], 
+            ["r", r], 
+            ["third degree angle", ac]]
      col_names = ["data", "xx"]
   
      #display table
