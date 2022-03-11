@@ -26,7 +26,6 @@ t = turtle.Turtle()
 t.speed(1000)
 t.getscreen().bgcolor('#C1FDD1')
 want = input("What geometric shape do you want:")
-
 if want == "square" or want == "s" :
  a = float(input("How long is the rib?:"))
  for n in range(1):
@@ -59,6 +58,9 @@ if want == "square" or want == "s" :
   
   #display table
  print(tabulate(data, headers=col_names, tablefmt="fancy_grid"))
+
+#_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-__-_-_-_-_-_-__
+
 else:
  if want == "rectangle" or want == "r" :
    a = float(input("the length of the rectangle:"))
@@ -70,7 +72,7 @@ else:
      t.left(90)
      t.speed('fastest')
    print("Shape related data are:")
-   sum1 = float(a + b) * (2) 
+   sum1 = float(a + b) * (2)    
    sum2 = float(a*b)
    sum3 = float(math.sqrt(a**2+b**2))
    for n in ['red']:
@@ -144,14 +146,14 @@ else:
        t.color('green')
        print("\nShape related data are:")
        style = ('Courier',10,'italic')
-       t.write(""" ------right triangle-------   """,font=style,align='right' )
+       t.write(""" ------right triangle-------   """,font=style,align='right')
      print("""                                                          
                                                                     . *| 
-                                                            c   . *    |                                                              
+                                                            c   . *    |                                                                    
                                                             . *        | b
                                                           *____________|
                                                                 a
-     
+                                                                  
      """)
      sum1 = float(a + b + cc)
      sum2 = float((a*b)/2)
@@ -323,10 +325,12 @@ else:
      print(tabulate(data, headers=col_names, tablefmt="fancy_grid"))
 #wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
    else:
-    if b == ccc and d != c and c < 90  :
+    if b == ccc and d != c and c < 90 :
+     style = ('Courie   r',10,'italic')
      for n in [1] :
       t.forward(b*10)
       t.end_fill()
+      t.write("""------isosceles triangle-------   """,font=style,align='right' )
      print("Shape related data are:")
      print("""                                                          
                                                                     . *| 
